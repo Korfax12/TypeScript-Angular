@@ -1,0 +1,11 @@
+<h1> Списък с купени продукти</h1>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <label formArrayName="orders" *ngFor="let order of form.controls.orders.controls; let i = index">
+    <input type="checkbox" [formControlName]="i">
+    {{orders[i].name}}
+  </label>
+
+  <div *ngIf="!form.valid">Избери поне едно бе УЕЕЕЕЙЙЙЙЙ</div>
+  <br>
+  <button [disabled]="!form.valid">Натисниии</button>
+</form>
